@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Serviços da Metrics Bloom - Governança de Dados Sustentável e Cultura de Higiene Digital para empresas modernas.">
+    <meta name="keywords" content="governança de dados, dark data, higiene digital, clean cloud, sustentabilidade digital">
+
+    <title>Serviços - Metrics Bloom</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, rgba(163, 210, 202, 0.2) 0%, rgba(94, 139, 126, 0.2) 100%);
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .lifecycle-chart {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .lifecycle-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .lifecycle-stage {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: var(--fundo-secundario);
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .lifecycle-stage.active {
+            background: var(--verde-primario);
+            color: white;
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .stage-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .lifecycle-controls {
+            text-align: center;
+        }
+
+        .lifecycle-controls button {
+            background: var(--verde-primario);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lifecycle-controls button:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        .service-section {
+            margin: 4rem 0;
+        }
+
+        .service-problem {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .service-solution {
+            background: #d1edff;
+            border-left: 4px solid var(--verde-primario);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--verde-primario);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box {
+            background: var(--fundo-secundario);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--verde-primario);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <a href="index.html" class="header__logo" aria-label="Metrics Bloom - Página inicial">
+                <img src="assets/images/logo.png" alt="Logo Metrics Bloom" class="header__logo-img">
+                <span class="header__logo-text">Metrics Bloom</span>
+            </a>
+
+            <nav class="header__nav" role="navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="servicos.html" class="header__nav-link" aria-current="page">Serviços</a></li>
+                    <li><a href="sobre.html" class="header__nav-link">Sobre</a></li>
+                    <li><a href="contato.html" class="header__nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Hero Section -->
+        <section class="services-hero">
+            <div class="section__container">
+                <h1 class="fade-in">Nossos Serviços</h1>
+                <p class="fade-in" style="font-size: 1.2rem; color: var(--texto-secundario); max-width: 600px; margin: 0 auto;">
+                    Transformamos a gestão de dados da sua empresa com soluções sustentáveis e eficientes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 1: Governança de Dados Sustentável -->
+        <section class="section service-section">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Transforme seu Ativo Mais Valioso em um Modelo de Eficiência</h2>
+
+                <!-- O Problema Invisível -->
+                <div class="fade-in">
+                    <h3>O Custo do 'Dark Data'</h3>
+                    <div class="service-problem">
+                        <p>
+                            <strong>Muitas empresas mantêm arquivos indefinidamente, consumindo energia e espaço de armazenamento desnecessariamente.</strong>
+                            Cada gigabyte inútil exige energia constante em data centers, aumentando as emissões de GEE e os custos operacionais.
+                            Nosso objetivo é manter o 'dark data' abaixo de 5% em seu primeiro ano conosco.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nossa Solução Técnica -->
+                <div class="fade-in">
+                    <h3>O Programa de Higiene Digital Corporativa</h3>
+                    <div class="service-solution">
+                        <p>
+                            Nossa abordagem técnica e estratégica garante que seus dados trabalhem a favor da eficiência e sustentabilidade.
+                        </p>
+                    </div>
+
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Mapeamento e Classificação</h4>
+                            <p>O primeiro passo é classificar os dados de acordo com seu valor para o negócio.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>Política de Ciclo de Vida</h4>
+                            <p>Definimos prazos automáticos para retenção, arquivamento ou exclusão segura dos dados.</p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>Governança Automatizada</h4>
+                            <p>Utilizamos ferramentas para aplicar as políticas sem intervenção manual constante, garantindo agilidade e conformidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infográfico Interativo -->
+                <div class="fade-in">
+                    <h3>Ciclo de Vida do Dado - Demonstração Interativa</h3>
+                    <div id="data-lifecycle-chart"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Cultura de Higiene Digital -->
+        <section class="section service-section" style="background-color: var(--fundo-secundario);">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Capacitando Pessoas para um Futuro Digital Sustentável</h2>
+
+                <!-- O Desafio Humano -->
+                <div class="fade-in">
+                    <h3>Tecnologia sem Cultura não Gera Transformação</h3>
+                    <div class="service-problem">
+                        <p>
+                            <strong>A sustentabilidade digital só é eficaz quando se torna parte da cultura.</strong>
+                            Nosso foco é construir uma cultura forte desde o início, evitando a apatia e garantindo que
+                            cada colaborador entenda seu papel.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nossa Abordagem Imersiva -->
+                <div class="fade-in">
+                    <h3>Integração e Engajamento Contínuo</h3>
+
+                    <div class="two-columns">
+                        <div class="highlight-box">
+                            <h4>🎯 Onboarding 'Clean Cloud'</h4>
+                            <p>
+                                Disponibilizamos o 'Kit de Onboarding Clean Cloud', um módulo obrigatório para todos os
+                                novos funcionários, garantindo 100% de conclusão e alinhamento desde o primeiro dia.
+                            </p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4>🌱 'Data Diet Day'</h4>
+                            <p>
+                                Promovemos o 'Data Diet Day', uma iniciativa de engajamento para que as equipes revisem
+                                e otimizem seus próprios arquivos digitais, reforçando a responsabilidade individual e coletiva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Resultados -->
+        <section class="section">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Resultados Esperados</h2>
+
+                <div class="cards">
+                    <article class="card fade-in">
+                        <div class="card__icon">📉</div>
+                        <h3>Redução de Custos</h3>
+                        <p>Até 40% de redução nos custos de armazenamento no primeiro ano através da eliminação de dark data.</p>
+                    </article>
+
+                    <article class="card fade-in">
+                        <div class="card__icon">⚡</div>
+                        <h3>Maior Eficiência</h3>
+                        <p>Acesso 60% mais rápido a dados relevantes com estruturas organizadas e políticas claras.</p>
+                    </article>
+
+                    <article class="card fade-in">
+                        <div class="card__icon">🌍</div>
+                        <h3>Impacto Ambiental</h3>
+                        <p>Redução significativa na pegada de carbono digital através de práticas sustentáveis de gestão de dados.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" style="background-color: var(--verde-escuro); color: white;">
+            <div class="section__container" style="text-align: center;">
+                <h2 class="fade-in" style="color: white;">Pronto para Começar?</h2>
+                <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Entre em contato conosco e descubra como podemos transformar a gestão de dados da sua empresa.
+                </p>
+                <a href="contato.html" class="hero__cta fade-in" style="background-color: var(--verde-primario);">
+                    Solicitar Consultoria
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="assets/images/logo.png" alt="Logo Metrics Bloom" class="footer__logo-img">
+                <span class="footer__logo-text">Metrics Bloom</span>
+            </div>
+
+            <p class="footer__copyright">
+                © 2025 Metrics Bloom. Todos os direitos reservados.
+            </p>
+
+
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/language-switcher.js"></script>
+    <script>
+        // Inicializar o gráfico interativo quando a página carregar
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof MetricsBloom !== 'undefined') {
+                MetricsBloom.createDataLifecycleChart();
+            }
+        });
+    </script>
+</body>
+
+</html>

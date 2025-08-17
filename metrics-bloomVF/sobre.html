@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre a Metrics Bloom - Transformando Poluição Digital Invisível em Liderança Visível. Conheça nossa visão e fundador.">
+    <meta name="keywords" content="metrics bloom, pablo henrique, sustentabilidade digital, inovação, liderança">
+
+    <title>Sobre - Metrics Bloom</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, rgba(163, 210, 202, 0.2) 0%, rgba(94, 139, 126, 0.2) 100%);
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .vision-section {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .founder-section {
+            background: var(--fundo-secundario);
+            padding: 4rem 0;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .founder-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--verde-primario), var(--verde-escuro));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 10px 25px rgba(163, 210, 202, 0.4);
+        }
+
+        .founder-info h2 {
+            margin-bottom: 0.5rem;
+            color: var(--verde-escuro);
+        }
+
+        .founder-info h3 {
+            color: var(--verde-primario);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .values-section {
+            padding: 4rem 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--verde-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .timeline-section {
+            background: var(--fundo-secundario);
+            padding: 4rem 0;
+        }
+
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--verde-primario);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: calc(50% + 2rem);
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: calc(50% + 2rem);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--verde-primario);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--verde-primario);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .founder-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .founder-photo {
+                margin: 0 auto;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 3rem !important;
+                padding-right: 1rem !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <a href="index.html" class="header__logo" aria-label="Metrics Bloom - Página inicial">
+                <img src="assets/images/logo.png" alt="Logo Metrics Bloom" class="header__logo-img">
+                <span class="header__logo-text">Metrics Bloom</span>
+            </a>
+
+            <nav class="header__nav" role="navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="servicos.html" class="header__nav-link">Serviços</a></li>
+                    <li><a href="sobre.html" class="header__nav-link" aria-current="page">Sobre</a></li>
+                    <li><a href="contato.html" class="header__nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="section__container">
+                <h1 class="fade-in">Transformando Poluição Digital Invisível em Liderança Visível</h1>
+                <p class="fade-in" style="font-size: 1.2rem; color: var(--texto-secundario); max-width: 700px; margin: 1.5rem auto 0;">
+                    Conheça a história, visão e valores que guiam a Metrics Bloom na construção de um futuro digital mais sustentável.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção Visão -->
+        <section class="vision-section">
+            <div class="section__container">
+                <div class="vision-content fade-in">
+                    <h2>Nossa Visão</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        A Metrics Bloom nasceu com um propósito claro: ser reconhecida não apenas por entregar soluções
+                        digitais inovadoras, mas por gerenciar dados de forma responsável. Queremos provar que a
+                        sustentabilidade acelera a eficiência e a inovação, construindo uma cultura que cresce de forma
+                        inteligente e verde.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--texto-secundario);">
+                        Acreditamos que cada byte de dados tem um propósito e um ciclo de vida. Nossa missão é garantir
+                        que esse ciclo seja otimizado para gerar valor máximo com impacto ambiental mínimo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Fundador -->
+        <section class="founder-section">
+            <div class="section__container">
+                <div class="founder-card fade-in">
+                    <div class="founder-photo">
+                        <img src="assets/images/Foto site.png" alt="Foto do Fundador Pablo Monteiro">
+                    </div>
+                    <div class="founder-info">
+                        <h2>Pablo Monteiro </h2>
+                        <h3>Fundador & Estrategista Líder</h3>
+                        <p>
+                            Responsável por definir a visão estratégica da Metrics Bloom e incorporar a sustentabilidade
+                            como um princípio central desde a sua concepção. Com uma paixão por tecnologia e meio ambiente,
+                            Pablo acredita que a inovação digital deve caminhar lado a lado com a responsabilidade ambiental.
+                        </p>
+                        <p style="margin-top: 1rem; color: var(--texto-secundario);">
+                            "Não basta criar soluções digitais eficientes. Precisamos criar soluções que sejam eficientes
+                            E sustentáveis. O futuro da tecnologia é verde, ou não será futuro."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Valores -->
+        <section class="values-section">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Nossos Valores</h2>
+
+                <div class="values-grid">
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🌱</div>
+                        <h3>Sustentabilidade</h3>
+                        <p>
+                            Cada decisão que tomamos considera o impacto ambiental. Acreditamos que a tecnologia
+                            deve ser uma força para o bem do planeta.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🎯</div>
+                        <h3>Eficiência</h3>
+                        <p>
+                            Buscamos sempre a máxima eficiência em nossos processos e soluções, eliminando
+                            desperdícios e otimizando recursos.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🚀</div>
+                        <h3>Inovação</h3>
+                        <p>
+                            Estamos sempre na vanguarda da tecnologia, desenvolvendo soluções criativas
+                            para os desafios do mundo digital moderno.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🤝</div>
+                        <h3>Transparência</h3>
+                        <p>
+                            Mantemos comunicação clara e honesta com nossos clientes, parceiros e equipe,
+                            construindo relacionamentos baseados na confiança.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">📚</div>
+                        <h3>Educação</h3>
+                        <p>
+                            Acreditamos no poder da educação para transformar culturas organizacionais
+                            e criar mudanças duradouras.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🌍</div>
+                        <h3>Responsabilidade</h3>
+                        <p>
+                            Assumimos a responsabilidade pelo impacto de nossas ações e trabalhamos
+                            para deixar um legado positivo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Timeline -->
+        <section class="timeline-section">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Nossa Jornada</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2024 - Fundação</h4>
+                            <p>Pablo Monteiro funda a Metrics Bloom com a visão de transformar a gestão de dados através da sustentabilidade digital.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2024 - Primeiro Produto</h4>
+                            <p>Desenvolvimento do programa "Clean Cloud" para onboarding de funcionários em práticas de higiene digital.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2025 - Expansão</h4>
+                            <p>Lançamento da plataforma completa de governança de dados sustentável e início das operações comerciais.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Futuro - Visão</h4>
+                            <p>Tornar-se referência global em sustentabilidade digital, ajudando empresas a reduzir sua pegada de carbono digital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section" style="background-color: var(--verde-escuro); color: white;">
+            <div class="section__container" style="text-align: center;">
+                <h2 class="fade-in" style="color: white;">Quer Fazer Parte Desta Jornada?</h2>
+                <p class="fade-in" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Entre em contato conosco e descubra como podemos trabalhar juntos por um futuro digital mais sustentável.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contato.html" class="hero__cta fade-in" style="background-color: var(--verde-primario);">
+                        Fale Conosco
+                    </a>
+                    <a href="servicos.html" class="hero__cta fade-in" style="background-color: transparent; border: 2px solid var(--verde-primario);">
+                        Conheça Nossos Serviços
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="assets/images/logo.png" alt="Logo Metrics Bloom" class="footer__logo-img">
+                <span class="footer__logo-text">Metrics Bloom</span>
+            </div>
+
+            <p class="footer__copyright">
+                © 2025 Metrics Bloom. Todos os direitos reservados.
+            </p>
+
+
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/language-switcher.js"></script>
+</body>
+
+</html>

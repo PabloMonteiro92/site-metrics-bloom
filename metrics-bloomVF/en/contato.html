@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Metrics Bloom. Request a consultation on digital sustainability and data governance.">
+    <meta name="keywords" content="contact, consultation, digital sustainability, metrics bloom">
+
+    <title>Contact - Metrics Bloom</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, rgba(163, 210, 202, 0.2) 0%, rgba(94, 139, 126, 0.2) 100%);
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--verde-escuro);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--fundo-secundario);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: var(--font-corpo);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--verde-primario);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error,
+        .form-group select.error {
+            border-color: #e74c3c;
+        }
+
+        .field-error {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--verde-primario);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--verde-escuro);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--verde-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.5rem;
+            color: var(--verde-escuro);
+        }
+
+        .contact-details p {
+            color: var(--texto-secundario);
+            margin: 0;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <a href="index.html" class="header__logo" aria-label="Metrics Bloom - Home page">
+                <img src="assets/images/logo.png" alt="Metrics Bloom Logo" class="header__logo-img">
+                <span class="header__logo-text">Metrics Bloom</span>
+            </a>
+
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="servicos.html" class="header__nav-link">Services</a></li>
+                    <li><a href="sobre.html" class="header__nav-link">About</a></li>
+                    <li><a href="contato.html" class="header__nav-link" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="header__mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="section__container">
+                <h1 class="fade-in">Contact Us</h1>
+                <p class="fade-in" style="font-size: 1.2rem; color: var(--texto-secundario); max-width: 600px; margin: 1.5rem auto 0;">
+                    Ready to transform your company's data management? Let's talk about how we can help.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="section__container">
+                <div class="contact-container">
+                    <!-- Form -->
+                    <div class="contact-form fade-in">
+                        <h2 style="margin-bottom: 2rem; color: var(--verde-escuro);">Request a Consultation</h2>
+
+                        <div class="success-message" id="success-message">
+                            Message sent successfully! We will contact you soon.
+                        </div>
+
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="nome">Full Name *</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="empresa">Company</label>
+                                <input type="text" id="empresa" name="empresa">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone">Phone</label>
+                                <input type="tel" id="telefone" name="telefone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="servico">Service of Interest</label>
+                                <select id="servico" name="servico">
+                                    <option value="">Select a service</option>
+                                    <option value="governanca-dados">Sustainable Data Governance</option>
+                                    <option value="cultura-digital">Digital Hygiene Culture</option>
+                                    <option value="consultoria-geral">General Consultation</option>
+                                    <option value="outro">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagem">Message *</label>
+                                <textarea id="mensagem" name="mensagem" placeholder="Tell us more about your needs and challenges..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info fade-in">
+                        <h2 style="margin-bottom: 2rem; color: var(--verde-escuro);">Other Ways to Contact</h2>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>contato@metricsbloom.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+351 911545360</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <p>
+                                <p>
+                                    <a href="https://www.linkedin.com/in/pablo-monteiro-86a45b235" target="_blank" rel="noopener noreferrer">
+                                        Pablo Monteiro
+                                    </a>
+                                </p>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday to Friday: 9am to 6pm</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding: 2rem; background: var(--fundo-secundario); border-radius: 15px;">
+                            <h4 style="color: var(--verde-escuro); margin-bottom: 1rem;">Quick Response</h4>
+                            <p style="color: var(--texto-secundario); margin: 0;">
+                                We respond to all messages within 24 hours. For urgent matters,
+                                contact us directly by email with subject: "urgent".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background-color: var(--fundo-secundario);">
+            <div class="section__container">
+                <h2 class="section__title fade-in">Frequently Asked Questions</h2>
+
+                <div class="cards">
+                    <article class="card fade-in">
+                        <h3>How long does it take to see results?</h3>
+                        <p>
+                            The first results in storage cost reduction can be seen
+                            in 30-60 days. Complete cultural transformation occurs in 6-12 months.
+                        </p>
+                    </article>
+
+                    <article class="card fade-in">
+                        <h3>What size companies do you work with?</h3>
+                        <p>
+                            We serve from startups to large corporations. Our solutions are
+                            scalable and adaptable to the size and needs of each organization.
+                        </p>
+                    </article>
+
+                    <article class="card fade-in">
+                        <h3>How is the implementation done?</h3>
+                        <p>
+                            We start with a complete audit of your data, followed by gradual implementation
+                            of policies and team training. The entire process is closely monitored.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="assets/images/logo.png" alt="Metrics Bloom Logo" class="footer__logo-img">
+                <span class="footer__logo-text">Metrics Bloom</span>
+            </div>
+
+            <p class="footer__copyright">
+                © 2025 Metrics Bloom. All rights reserved.
+            </p>
+
+            <div class="footer__social" role="list">
+                <a href="#" class="footer__social-link" aria-label="LinkedIn" role="listitem">📧</a>
+                <a href="#" class="footer__social-link" aria-label="Twitter" role="listitem">🐦</a>
+                <a href="#" class="footer__social-link" aria-label="Instagram" role="listitem">📷</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/language-switcher.js"></script>
+    <script>
+        // Contact form specific functionality
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (MetricsBloom.validateForm(this)) {
+                // Simulate form submission
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                setTimeout(() => {
+                    document.getElementById('success-message').style.display = 'block';
+                    this.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+
+                    // Scroll to success message
+                    document.getElementById('success-message').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+
+</html>

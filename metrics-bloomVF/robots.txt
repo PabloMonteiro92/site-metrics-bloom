@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /dashboard-mock.html
+
+Sitemap: https://metricsbloom.com/sitemap.xml
+

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard - Plataforma Metrics Bloom">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Dashboard - Metrics Bloom</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: var(--verde-escuro);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-logo img {
+            height: 30px;
+            margin-right: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .sidebar-logo-text {
+            font-family: var(--font-titulo);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .sidebar-nav .icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .main-content {
+            background: var(--fundo-principal);
+            overflow-y: auto;
+        }
+
+        .dashboard-header {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--fundo-secundario);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-title {
+            color: var(--verde-escuro);
+            margin: 0;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--verde-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background: none;
+            border: 1px solid var(--verde-primario);
+            color: var(--verde-primario);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: var(--verde-primario);
+            color: white;
+        }
+
+        .dashboard-content {
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--verde-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--verde-escuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, var(--verde-primario), var(--verde-escuro));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .recent-activity {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--fundo-secundario);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--fundo-secundario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: var(--texto-principal);
+            margin-bottom: 0.25rem;
+        }
+
+        .activity-time {
+            font-size: 0.875rem;
+            color: var(--texto-secundario);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .dashboard-content {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/images/logo.png" alt="Logo Metrics Bloom">
+                <span class="sidebar-logo-text">Metrics Bloom</span>
+            </div>
+
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#" class="active"><span class="icon">📊</span> Dashboard</a></li>
+                    <li><a href="#"><span class="icon">💾</span> Governança de Dados</a></li>
+                    <li><a href="#"><span class="icon">🌱</span> Higiene Digital</a></li>
+                    <li><a href="#"><span class="icon">📈</span> Relatórios</a></li>
+                    <li><a href="#"><span class="icon">⚙️</span> Configurações</a></li>
+                    <li><a href="#"><span class="icon">👥</span> Equipe</a></li>
+                    <li><a href="#"><span class="icon">📚</span> Treinamentos</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <h1 class="dashboard-title">Dashboard</h1>
+                <div class="user-menu">
+                    <span>Bem-vindo, Demo User</span>
+                    <div class="user-avatar">DU</div>
+                    <button class="logout-btn" onclick="logout()">Sair</button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="dashboard-content">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">💾</div>
+                        <div class="stat-value">2.3TB</div>
+                        <div class="stat-label">Dados Otimizados</div>
+                    </div>
+
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value">R$ 45k</div>
+                        <div class="stat-label">Economia Mensal</div>
+                    </div>
+
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">🌱</div>
+                        <div class="stat-value">87%</div>
+                        <div class="stat-label">Redução de CO₂</div>
+                    </div>
+
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Usuários Treinados</div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="chart-container fade-in">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--verde-escuro);">Evolução da Otimização de Dados</h3>
+                    <div class="chart-placeholder">
+                        📈 Gráfico de Evolução - Dados Simulados
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="recent-activity fade-in">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--verde-escuro);">Atividades Recentes</h3>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">🗑️</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Limpeza automática executada</div>
+                            <div class="activity-time">Há 2 horas</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">👤</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Novo usuário completou treinamento Clean Cloud</div>
+                            <div class="activity-time">Há 4 horas</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">📊</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Relatório mensal gerado</div>
+                            <div class="activity-time">Há 1 dia</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">⚠️</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Alerta: Dark data detectado no setor financeiro</div>
+                            <div class="activity-time">Há 2 dias</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">🎯</div>
+                        <div class="activity-content">
+                            <div class="activity-title">Meta de redução de 40% atingida</div>
+                            <div class="activity-time">Há 3 dias</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function logout() {
+            if (confirm('Tem certeza que deseja sair?')) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Simular dados em tempo real
+        function updateStats() {
+            const statValues = document.querySelectorAll('.stat-value');
+
+            // Simular pequenas variações nos valores
+            setTimeout(() => {
+                statValues[0].textContent = (2.3 + Math.random() * 0.1).toFixed(1) + 'TB';
+                statValues[1].textContent = 'R$ ' + (45 + Math.floor(Math.random() * 5)) + 'k';
+                statValues[2].textContent = (87 + Math.floor(Math.random() * 3)) + '%';
+                statValues[3].textContent = (156 + Math.floor(Math.random() * 10));
+            }, 3000);
+        }
+
+        // Atualizar stats a cada 10 segundos
+        setInterval(updateStats, 10000);
+
+        // Adicionar efeito de loading inicial
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
